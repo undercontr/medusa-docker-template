@@ -1,11 +1,11 @@
+
 # Docker and Docker Compose template for Medusa and NextJs
 
-To build the images and start the application please try
+This repository is not an official repository of Medusa.
 
-`docker compose up`
+* To build the images and start the application please try `docker compose up`
+* After containers are started execute this code to seed the sample data to the database `docker exec <medusa-container-name> npx medusa seed -f ./data/seed.json`
 
-After containers are started execute this code to seed the sample data to the database
+*Replace `<medusa-container-name>` with the container name of medusa service.*
 
-`docker exec <medusa-container-name> npx medusa seed -f ./data/seed.json`
-
-* replace <medusa-container-name> with the container name of medusa service.
+Medusa website: https://medusa.com
