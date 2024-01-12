@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  medusa:
+    build:
+      context: ./admin-backend
+      dockerfile: Dockerfile
+    ports:
+      - 7000:7000
+      - 7001:7001
+      - 9000:9000
+    environment:
+      DATABASE_USERNAME: pg
+      DATABASE_PASSWORD: secret
+    depends_on:
+      - db
+
+  storefront:
+    build:
+      context: ./storefront
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    depends_on:
+      - medusa
+
+  db:
+    image: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: pg
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: medusa
+
+volumes:
+  pgdata:
