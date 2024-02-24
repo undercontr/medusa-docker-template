@@ -8,4 +8,4 @@ This repository is not an official repository of Medusa.
 
 *Replace `<medusa-container-name>` with the container name of medusa service.*
 
-Medusa website: https://medusa.com
+Medusa website: https://medusajs.com
